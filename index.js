@@ -1,3 +1,9 @@
+const buttons = document.querySelectorAll(".numBtn");
+console.log(buttons);
+const input = document.getElementById('displayField');
+
+
+//Basic operation functions
 function addNums(a, b) {
     return a + b;
 }
@@ -28,6 +34,11 @@ function operate(operator, a, b) {
     }
 }
 
-document.getElementById('seven').addEventListener('click', () => {
-    console.log('This is number seven');
-});
+//Adds an event listener for each button to be able to input it onto the screen
+
+for(let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener('click', function() {
+        return input.value += this.value;
+    });
+}
+
